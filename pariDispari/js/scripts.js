@@ -27,9 +27,9 @@ function rndmNmbr(min, max) {
 }
 
 //Funzione pariDispari
-function oddEven(number) {
+function oddEven(num1, num2) {
 
-      if(sum % 2 == 0) {
+      if((num1 +num2) % 2 == 0) {
 
             return 'pari';
 
@@ -49,46 +49,50 @@ if(isNaN(userSelect) || userSelect < 1 || userSelect > 2) {
       alert('Attenzione valore non valido');
       window.location.reload();
 
-}
+} else {
 
-const userNumber = parseInt(prompt('Inserisci numero da 1 a 5'));
-
-if (isNaN(userNumber) || userNumber <= 0 || userNumber > 5) {
-
-      alert('Attenzione valore non valido');
-      window.location.reload();
-
-} 
-
-const pcNumber = rndmNmbr(1, 5);
-alert('Pc sceglie ' + pcNumber);
-
-const sum = userNumber + pcNumber;
-const result = oddEven(sum);
-
-if(userSelect == 1) {
-
-      if(result == 'pari') {
+      const userNumber = parseInt(prompt('Inserisci numero da 1 a 5'));
       
-            alert('Hai vinto!! La somma dei due numeri è pari');
+      if (isNaN(userNumber) || userNumber <= 0 || userNumber > 5) {
+      
+            alert('Attenzione valore non valido');
+            window.location.reload();
       
       } else {
-      
-            alert('Hai perso!! La somma dei due numeri è dispari');
-      
-      }
 
-} else if(userSelect == 2) {
-
-      if (result == 'pari') {
-
-            alert('Hai perso!! La somma dei due numeri è pari');
-
-      } else {
-
-            alert('Hai vinto!! La somma dei due numeri è dispari');
+            const pcNumber = rndmNmbr(1, 5);
+            alert('Pc sceglie ' + pcNumber);
+            
+            const result = oddEven(userNumber, pcNumber);
+            
+            if(userSelect == 1) {
+            
+                  if(result == 'pari') {
+                  
+                        alert('Hai vinto!! La somma dei due numeri è pari');
+                  
+                  } else {
+                  
+                        alert('Hai perso!! La somma dei due numeri è dispari');
+                  
+                  }
+            
+            } else if(userSelect == 2) {
+            
+                  if (result == 'pari') {
+            
+                        alert('Hai perso!! La somma dei due numeri è pari');
+            
+                  } else {
+            
+                        alert('Hai vinto!! La somma dei due numeri è dispari');
+            
+                  }
+            
+            }
 
       }
 
 }
+
 
